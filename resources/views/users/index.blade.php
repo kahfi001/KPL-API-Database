@@ -1,5 +1,5 @@
 {{-- <x-app-layout title="Users">
- 
+
 </x-app-layout> --}}
 
 
@@ -7,15 +7,15 @@
 
 @section('container')
 <div class="container">
-  <x-card title='Users'>
-      <table class="table table-info">
-          <thead>
-              <th>#</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Twitter</th>
-          </thead>
-          <tbody>
+    <x-card title='Users'>
+        <table class="table table-info">
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Twitter</th>
+            </thead>
+            <tbody>
             @if (count($users))
             @foreach ($users as $key => $user)
             <tr>
@@ -34,9 +34,9 @@
                 </td>
             </tr>
             @endif
-          </tbody>
-      </table>
-  </x-card>
+            </tbody>
+        </table>
+    </x-card>
 </div>
-  
+
 @endsection

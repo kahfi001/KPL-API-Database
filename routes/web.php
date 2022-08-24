@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,42 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', fn () => view('home'));
+Route::get('program', fn () => view('program'));
+Route::get('about', fn () => view('about'));
 
-Route::get('program', function () {
-    return view('program');
-});
-Route::get('about', function () {
-    return view('about');
-});
-
-Route::get('users', function () {
-    $users = [
-        [
-            'name'      => 'John Doe',
-            'email'     => 'john@mail.com',
-            'twitter'   => 'johndoe'
-        ],
-        [
-            'name'      => 'Tailor Otwell',
-            'email'     => 'tailor@mail.com',
-            'twitter'   => 'tailorott'
-        ],
-        [
-            'name'      => 'Steve Schoger',
-            'email'     => 'steve@mail.com',
-            'twitter'   => 'steveschoger',
-        ],
-    ];
-
-    return view('users.index', [
-        'users' => $users,
-    ]);
-});
 
 Route::middleware('kmkey')->group(function () {
     Route::get('/dashboard', fn () => 'Dashboard')->name('dashboard');
 });
+
+Route::get('users', [UserController::class, 'index']);
+
+Route::get('users/{user}', [UserController::class, 'show']);
