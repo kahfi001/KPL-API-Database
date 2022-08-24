@@ -24,3 +24,27 @@ Route::get('program', function () {
 Route::get('about', function () {
     return view('about');
 });
+
+Route::get('users', function () {
+    $users = [
+        [
+            'name'      => 'John Doe',
+            'email'     => 'john@mail.com',
+            'twitter'   => 'johndoe'
+        ],
+        [
+            'name'      => 'Tailor Otwell',
+            'email'     => 'tailor@mail.com',
+            'twitter'   => 'tailorott'
+        ],
+        [
+            'name'      => 'Steve Schoger',
+            'email'     => 'steve@mail.com',
+            'twitter'   => 'steveschoger',
+        ],
+    ];
+
+    return view('users.index', [
+        'users' => $users,
+    ]);
+});

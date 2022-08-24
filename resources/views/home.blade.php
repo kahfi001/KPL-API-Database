@@ -10,7 +10,7 @@
           <h1>Temukan tempat magangmu</h1>
           <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, sunt repudiandae</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a href="/donor" class="btn btn-outline-success">Cari Sekarang</a>
+            <a href="/program" class="btn btn-outline-success">Cari Sekarang</a>
           </div>
         </div>
       </div>
