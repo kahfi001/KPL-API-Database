@@ -212,4 +212,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'kmKey' => env('KM_KEY', 'default'),
+
+
 ];

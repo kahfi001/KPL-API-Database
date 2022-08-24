@@ -48,3 +48,7 @@ Route::get('users', function () {
         'users' => $users,
     ]);
 });
+
+Route::middleware('kmkey')->group(function () {
+    Route::get('/dashboard', fn () => 'Dashboard')->name('dashboard');
+});
