@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('product_reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreignId('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            // $table->unsignedBigInteger('user_id');
+            $table->foreignId('product_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->integer('score');
             $table->string('review');
             $table->timestamps();

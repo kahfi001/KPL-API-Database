@@ -17,8 +17,8 @@ class StoreFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'user_id' => mt_rand(1, 10),
+            'name' => $this->faker->company(),
+            'user_id' => mt_rand(1, 5),
         ];
     }
 }
