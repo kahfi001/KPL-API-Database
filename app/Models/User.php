@@ -23,6 +23,15 @@ class User extends Authenticatable
         'city',
     ];
 
+    public function store()
+    {
+        return $this->hasOne('App\Store');
+    }
+    public function product_review()
+    {
+        return $this->hasOne(Product_review::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

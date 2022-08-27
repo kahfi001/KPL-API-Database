@@ -18,7 +18,7 @@ class StoreFactory extends Factory
     {
         return [
             'name' => $this->faker->company(),
-            'user_id' => mt_rand(1, 5),
+            'user_id' => $this->faker->unique()->numberBetween(1, 5),
         ];
     }
 }

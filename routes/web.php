@@ -19,10 +19,15 @@ use App\Http\Controllers\PageController;
 Route::get('/', fn () => view('home'));
 Route::get('program', fn () => view('program'));
 Route::get('about', fn () => view('about'));
+Route::get('dashboard.index', fn () => view('dashboard.index'));
 
 
 Route::middleware('kmkey')->group(function () {
     Route::get('/dashboard', fn () => 'Dashboard')->name('dashboard');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
 });
 
 Route::get('users', [UserController::class, 'index']);

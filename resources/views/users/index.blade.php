@@ -7,6 +7,7 @@
 
 @section('container')
 <div class="container">
+    <a class="btn btn-primary" href="users/show">user</a>
     <x-card title='Users'>
         <table class="table table-info">
             <thead>
