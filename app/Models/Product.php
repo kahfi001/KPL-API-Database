@@ -9,6 +9,13 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+    // protected $fillable = [
+    //     'name',
+    //     'price',
+    //     'description'
+    // ];
+
     public function store()
     {
         return $this->belongsTo(Store::class, 'store_id');
@@ -16,6 +23,6 @@ class Product extends Model
 
     public function product_review()
     {
-        return $this->hasOne(Product_review::class);
+        return $this->hasMany(Product_review::class);
     }
 }

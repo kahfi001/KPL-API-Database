@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,9 @@ Route::get('dashboard.index', fn () => view('dashboard.index'));
 Route::middleware('kmkey')->group(function () {
     Route::get('/dashboard', fn () => 'Dashboard')->name('dashboard');
 });
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
@@ -33,3 +38,11 @@ Route::get('/dashboard', function () {
 Route::get('users', [UserController::class, 'index']);
 
 Route::get('users/{user}', [UserController::class, 'show']);
+
+Route::get('/dashboard/product', [DashboardProductController::class, 'index']);
+
+Route::get('dashboard/product/create', [DashboardProductController::class, 'create'])->middleware('auth');
+Route::post('dashboard/product/create/{id}', [DashboardProductController::class, 'store'])->middleware('auth');
+Route::get('/dashboard/product/edit/{id}', [DashboardProductController::class, 'edit'])->middleware('auth');
+Route::get('/dashboard/product/update', [DashboardProductController::class, 'update'])->middleware('auth');
+Route::post('dashboard/product/{id}', [DashboardProductController::class, 'destroy'])->middleware('auth');

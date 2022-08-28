@@ -17,19 +17,20 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'city',
-    ];
+    protected $guarded = ['id'];
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'city',
+    // ];
 
     public function store()
     {
-        return $this->hasOne('App\Store');
+        return $this->hasOne(Store::class);
     }
     public function product_review()
     {
-        return $this->hasOne(Product_review::class);
+        return $this->hasMany(Product_review::class);
     }
 
     /**

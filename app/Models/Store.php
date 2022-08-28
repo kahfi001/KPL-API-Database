@@ -8,20 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Store extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'name',
-    ];
+    protected $guarded = ['id'];
+    // protected $fillable = [
+    //     'name',
+    // ];
 
 
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function product()
     {
-        return $this->hasOne(Product::class);
+        return $this->hasMany(Product::class);
     }
 }

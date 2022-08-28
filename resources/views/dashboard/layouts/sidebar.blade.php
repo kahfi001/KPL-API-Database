@@ -7,12 +7,12 @@
           Dashboard
         </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/user*')?'active':'' }}" href="/dashboard/user">
           <span data-feather="heart"></span>
           User
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/product*')?'active':'' }}" href="/dashboard/product">
           <span data-feather="file-text"></span>
@@ -21,11 +21,11 @@
       </li>
       <hr>
       <li class="nav-item mx-auto">
-        <a class="btn btn-outline-danger" href="/">Logout</a>
-        {{-- <form action="/logout" method="post">
+        {{-- <a class="btn btn-outline-danger" href="/">Logout</a> --}}
+        <form action="/logout" method="post">
           @csrf
           <button type= "submit" class="btn btn-outline-danger nav-link "><span data-feather="log-out"></span>Logout</button>
-        </form> --}}
+        </form>
       </li>
     </ul>
   </div>

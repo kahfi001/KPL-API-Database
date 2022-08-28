@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('store_id');
-            $table->foreign('store_id')->references('id')->on('stores');
+            $table->foreignId('store_id')->constrained();
             $table->string('name', 255);
             $table->string('slug', 255);
             $table->double('price');
