@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-  <form action="/dashboard/product/create" method="post" enctype="multipart/form-data">
+  <form action="/dashboard/product" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>

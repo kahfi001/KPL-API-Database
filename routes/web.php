@@ -39,10 +39,12 @@ Route::get('users', [UserController::class, 'index']);
 
 Route::get('users/{user}', [UserController::class, 'show']);
 
-Route::get('/dashboard/product', [DashboardProductController::class, 'index']);
+// Route::get('/dashboard/product', [DashboardProductController::class, 'index']);
 
-Route::get('dashboard/product/create', [DashboardProductController::class, 'create'])->middleware('auth');
-Route::post('dashboard/product/create/{id}', [DashboardProductController::class, 'store'])->middleware('auth');
-Route::get('/dashboard/product/edit/{id}', [DashboardProductController::class, 'edit'])->middleware('auth');
-Route::get('/dashboard/product/update', [DashboardProductController::class, 'update'])->middleware('auth');
-Route::post('dashboard/product/{id}', [DashboardProductController::class, 'destroy'])->middleware('auth');
+// Route::get('dashboard/product/create', [DashboardProductController::class, 'create'])->middleware('auth');
+// Route::post('dashboard/product/create/{id}', [DashboardProductController::class, 'store'])->middleware('auth');
+// Route::get('/dashboard/product/edit/{id}', [DashboardProductController::class, 'edit'])->middleware('auth');
+// Route::get('/dashboard/product/update', [DashboardProductController::class, 'update'])->middleware('auth');
+// Route::post('dashboard/product/{id}', [DashboardProductController::class, 'destroy'])->middleware('auth');
+
+Route::resource('/dashboard/product', DashboardProductController::class);

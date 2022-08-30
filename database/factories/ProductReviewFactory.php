@@ -17,10 +17,10 @@ class ProductReviewFactory extends Factory
     public function definition()
     {
         return [
-            // 'store_id' => rand(1, 5),
-            // 'produt_id' => rand(1, 5),
-            // 'score' => $this->faker->numberBetween(1, 10),
-            // 'review' => $this->faker->sentence(100, 150),
+            'store_id' => rand(1, 5),
+            'produt_id' => rand(1, 5),
+            'score' => $this->faker->numberBetween(1, 10),
+            'review' => $this->faker->sentence(100, 150),
         ];
     }
 }
