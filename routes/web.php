@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardProductController;
+use App\Http\Controllers\ProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +33,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
+
+Route::get('program', [ProgramController::class, 'index']);
 
 Route::get('users', [UserController::class, 'index']);
 
