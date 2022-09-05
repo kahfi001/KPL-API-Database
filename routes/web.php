@@ -1,10 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DashboardProductController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\DashboardProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +20,7 @@ use App\Http\Controllers\ProgramController;
 |
 */
 
-Route::get('/', fn () => view('home'));
+Route::get('/', fn () => view('welcome'));
 Route::get('program', fn () => view('program'));
 Route::get('about', fn () => view('about'));
 Route::get('dashboard.index', fn () => view('dashboard.index'));
@@ -49,3 +52,7 @@ Route::get('users/{user}', [UserController::class, 'show']);
 // Route::post('dashboard/product/{id}', [DashboardProductController::class, 'destroy'])->middleware('auth');
 
 Route::resource('/dashboard/product', DashboardProductController::class);
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');

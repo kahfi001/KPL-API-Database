@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Store;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,10 +19,10 @@ class DashboardProductController extends Controller
      */
     public function index()
     {
-        $product = Product::where('store_id', auth()->user()->id)->get();
-
+        $product    = Product::where('store_id', auth()->user()->id)->get();
         return view('dashboard.product.index', [
-            'products' => $product
+            'products'  => $product,
+
         ]);
     }
 

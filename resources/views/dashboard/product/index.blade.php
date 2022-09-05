@@ -10,7 +10,7 @@
   {{ session('success') }}
 </div> 
 @endif
-<h1 class="h2">Halo {{ auth()->user()->name }}</h1>
+<h1 class="h2">Selamat Datang Toko {{ auth()->user()->store->name }}</h1>
 <table class="table table-striped table-sm">
   <a href="/dashboard/product/create" class="btn btn-primary mb-3">Buat Product</a>
   <thead>

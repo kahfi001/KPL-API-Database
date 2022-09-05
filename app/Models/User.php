@@ -17,12 +17,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $guarded = ['id'];
-    // protected $fillable = [
-    //     'name',
-    //     'email',
-    //     'city',
-    // ];
+    // protected $guarded = ['id'];
+    protected $fillable = [
+        'name',
+        'email',
+        'city',
+        'password'
+    ];
 
     public function store()
     {

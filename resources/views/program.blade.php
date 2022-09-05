@@ -1,6 +1,6 @@
-@extends('layouts.main',['title'=>'Program'])
+@extends('layouts.app',['title'=>'Program'])
 
-@section('container')
+@section('content')
   <div class="container">
       <div class="row flex-lg-row-reverse align-items-center">
         <div>

@@ -27,6 +27,6 @@ class DatabaseSeeder extends Seeder
 
         Product::factory(100)->create();
 
-        $this->call(ProductReviewSeeder::class);
+        // $this->call(ProductReviewSeeder::class);
     }
 }
