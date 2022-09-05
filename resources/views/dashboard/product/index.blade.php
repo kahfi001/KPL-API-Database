@@ -31,8 +31,6 @@
         <td>{{ $product->description }}</td>
         <td>{{ $product->photo }}</td>
         <td>
-          {{-- <a href="/dashboard/product" class="btn btn-info"><span data-feather="eye"></span> Lihat</a> --}}
-          {{-- <a href="/dashboard/faq/{{ $faq->id }}/edit" class="btn btn-warning"><span data-feather="edit"></span> Edit</a> --}}
           <a href="/dashboard/product/{{ $product->id }}/edit" class="btn btn-warning "><span data-feather="edit"></span> Edit</a>
           <form action="/dashboard/product/{{ $product->id }}" method="post" class="d-inline">
             @csrf

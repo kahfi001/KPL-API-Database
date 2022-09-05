@@ -7,7 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DashboardProductController;
-
+use App\Http\Controllers\DashboardStoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,12 +26,12 @@ Route::get('about', fn () => view('about'));
 Route::get('dashboard.index', fn () => view('dashboard.index'));
 
 
-Route::middleware('kmkey')->group(function () {
-    Route::get('/dashboard', fn () => 'Dashboard')->name('dashboard');
-});
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout']);
+// Route::middleware('kmkey')->group(function () {
+//     Route::get('/dashboard', fn () => 'Dashboard')->name('dashboard');
+// });
+// Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+// Route::post('/login', [LoginController::class, 'login']);
+// Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
@@ -56,3 +56,7 @@ Route::resource('/dashboard/product', DashboardProductController::class);
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('dashboard', [DashboardStoreController::class, 'index'])->middleware('auth');
+Route::get('dashboard/create', [DashboardStoreController::class, 'create'])->middleware('auth');
+Route::post('/dashboard/create', [DashboardStoreController::class, 'store'])->middleware('auth');

@@ -8,16 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Store extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
-    // protected $fillable = [
-    //     'name',
-    // ];
+    // protected $guarded = ['id'];
+    protected $fillable = [
+        'name',
+    ];
 
 
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function product()
